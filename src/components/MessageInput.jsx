@@ -105,7 +105,6 @@ export function MessageInput({ onKeyDown, onSend }) {
               autoFocusSearch={false}
               searchPlaceholder="Search emojis…"
               skinTonesDisabled
-              previewConfig={{ showPreview: false }}
             />
           </Suspense>
         </div>

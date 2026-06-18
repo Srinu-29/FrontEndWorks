@@ -8,6 +8,7 @@
   background: #ffffff;
   border-top: 1px solid var(--primary-border);
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 /* ── Quick reply chips ── */

@@ -39,6 +39,7 @@ function App() {
         crossorigin="anonymous"
         referrerpolicy="no-referrer"
       />
+
       {/* Chat window — fixed above the button */}
       {isOpen && (
         <div className={styles.windowWrapper}>

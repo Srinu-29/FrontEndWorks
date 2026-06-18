@@ -11,6 +11,7 @@
   cursor: pointer;
   font-size: 16px;
   font-weight: 700;
+  font-family: "Montserrat", sans-serif;
   box-shadow: 0 14px 28px rgba(47, 128, 237, 0.32);
   transition:
     transform 0.2s,

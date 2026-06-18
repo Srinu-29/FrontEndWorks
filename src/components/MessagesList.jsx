@@ -18,12 +18,7 @@ export function MessagesList({ messages, loading }) {
                 <i class="fa-brands fa-twitch"></i>
               )}
             </span>
-            <div className={styles.bubble}>
-              <span className={styles.role}>
-                {isUser ? "You" : "StarklyAI"}
-              </span>
-              {msg.text}
-            </div>
+            <div className={styles.bubble}>{msg.text}</div>
           </div>
         );
       })}

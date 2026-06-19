@@ -1,10 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./MessagesList.module.css";
+import { useTheme } from "../context/ThemeContext";
 
 export function MessagesList({ messages, loading }) {
   const bottomRef = useRef(null);
   const containerRef = useRef(null);
   const [isAtBottom, setIsAtBottom] = useState(true);
+
+  // Consume theme context for applying light/dark styles
+  const { theme } = useTheme();
 
   const scrollToBottom = () => {
     bottomRef.current?.scrollIntoView({
@@ -38,7 +42,10 @@ export function MessagesList({ messages, loading }) {
   }, []);
 
   return (
-    <div className={styles.container} ref={containerRef}>
+    <div
+      className={`${styles.container} ${theme === "light" ? styles.light : ""}`}
+      ref={containerRef}
+    >
       {messages.map((msg, i) => {
         const isUser = msg.role === "user";
 
@@ -49,9 +56,9 @@ export function MessagesList({ messages, loading }) {
           >
             <span className={styles.avatar}>
               {isUser ? (
-                <i class="fa-regular fa-circle-user"></i>
+                <i className="fa-regular fa-circle-user"></i>
               ) : (
-                <i class="fa-brands fa-twitch"></i>
+                <i className="fa-brands fa-twitch"></i>
               )}
             </span>
             <div className={styles.bubble}>{msg.text}</div>
@@ -69,7 +76,7 @@ export function MessagesList({ messages, loading }) {
           onClick={scrollToBottom}
           aria-label="Scroll to latest messages"
         >
-          <i class="fa-solid fa-arrow-down"></i>
+          <i className="fa-solid fa-arrow-down"></i>
         </button>
       )}
       <div ref={bottomRef}></div>

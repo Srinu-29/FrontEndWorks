@@ -83,18 +83,9 @@ export function ChatWindow({ messages, onKeyDown, onSend, onClear }) {
         onMouseDown={(e) => initResize(e, "nw")}
       />
 
-      {/* Reset size button */}
-      <button
-        className={styles.resetSizeButton}
-        onClick={resetSize}
-        aria-label="Reset window size to default"
-      >
-        <i class="fa-solid fa-down-left-and-up-right-to-center"></i>
-      </button>
-
       {/* Clipped inner panel */}
       <div className={styles.inner}>
-        <ChatHeader onClear={onClear} />
+        <ChatHeader onClear={onClear} onResetSize={resetSize} />
         <MessagesList messages={messages} loading={isLoading} />
         <MessageInput onKeyDown={onKeyDown} onSend={onSend} />
       </div>

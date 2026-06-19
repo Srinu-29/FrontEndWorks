@@ -7,6 +7,7 @@ import {
   setShowEmojiPicker,
   setInput,
 } from "../store/chatSlice";
+import { useTheme } from "../context/ThemeContext";
 
 const EmojiPicker = lazy(() => import("emoji-picker-react"));
 
@@ -16,6 +17,9 @@ export function MessageInput({ onKeyDown, onSend }) {
   const input = useSelector(selectInput);
   const wrapperRef = useRef(null);
   const inputRef = useRef(null);
+
+  // Consume theme context to apply light mode styles
+  const { theme } = useTheme();
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -41,7 +45,10 @@ export function MessageInput({ onKeyDown, onSend }) {
   const quickReplies = ["What is Web3?", "Pricing", "FAQs"];
 
   return (
-    <div className={styles.wrapper} ref={wrapperRef}>
+    <div
+      className={`${styles.wrapper} ${theme === "light" ? styles.light : ""}`}
+      ref={wrapperRef}
+    >
       {/* Quick Reply Chips */}
       <div className={styles.chips}>
         {quickReplies.map((reply) => (
@@ -74,7 +81,7 @@ export function MessageInput({ onKeyDown, onSend }) {
             type="button"
             aria-label="Toggle emoji picker"
           >
-            <i class="fa-brands fa-fort-awesome"></i>
+            <i className="fa-brands fa-fort-awesome"></i>
           </button>
         </div>
 
@@ -85,7 +92,7 @@ export function MessageInput({ onKeyDown, onSend }) {
           type="button"
           disabled={!input.trim()}
         >
-          <i class="fa-solid fa-paper-plane"></i>
+          <i className="fa-solid fa-paper-plane"></i>
         </button>
       </div>
 

@@ -9,6 +9,14 @@
   font-family: "Montserrat", sans-serif;
 }
 
+/* Right-side action buttons container */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
 .left {
   display: flex;
   align-items: center;
@@ -46,6 +54,33 @@
   color: rgba(255, 255, 255, 0.82);
 }
 
+/* Reset window size to default button */
+.resetSizeBtn {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.2s,
+    background-color 0.2s,
+    border-color 0.2s;
+}
+
+.resetSizeBtn:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.26);
+  border-color: rgba(255, 255, 255, 0.38);
+}
+
 .clearBtn {
   width: 50px;
   height: 30px;
@@ -57,8 +92,6 @@
   color: white;
   cursor: pointer;
   font-size: 14px;
-  position: absolute;
-  right: 50px;
   transition:
     transform 0.2s,
     background-color 0.2s,
@@ -66,6 +99,33 @@
 }
 
 .clearBtn:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.26);
+  border-color: rgba(255, 255, 255, 0.38);
+}
+
+/* Theme toggle button — switches between dark and light mode */
+.themeToggle {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 auto;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition:
+    transform 0.2s,
+    background-color 0.2s,
+    border-color 0.2s;
+}
+
+.themeToggle:hover {
   transform: scale(1.1);
   background: rgba(255, 255, 255, 0.26);
   border-color: rgba(255, 255, 255, 0.38);

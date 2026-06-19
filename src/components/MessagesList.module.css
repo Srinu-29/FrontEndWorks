@@ -8,6 +8,11 @@
   font-family: "Montserrat", sans-serif;
 }
 
+/* Light theme variant — white background */
+.light {
+  background: #ffffff;
+}
+
 .container::-webkit-scrollbar {
   width: 8px;
 }
@@ -16,6 +21,7 @@
   background: rgba(47, 128, 237, 0.25);
   border-radius: 999px;
 }
+
 .scrollToBottomButton {
   position: sticky;
   bottom: 16px;

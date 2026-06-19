@@ -10,6 +10,7 @@ import {
 } from "./store/chatSlice";
 import { useChatApi } from "./hooks/useChatApi";
 import { useChatPersistence } from "./hooks/useChatPersistence";
+import { ThemeProvider } from "./context/ThemeContext";
 
 function App() {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ function App() {
   }
 
   return (
-    <>
+    <ThemeProvider>
       <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -56,7 +57,7 @@ function App() {
       <div className={styles.btnWrapper}>
         <ChatButton isOpen={isOpen} onClick={() => dispatch(toggleChat())} />
       </div>
-    </>
+    </ThemeProvider>
   );
 }
 

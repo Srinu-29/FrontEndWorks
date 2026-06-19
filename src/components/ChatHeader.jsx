@@ -6,7 +6,7 @@ export function ChatHeader({ onClear, onResetSize }) {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className={styles.header}>
+    <div className={`${styles.header} ${theme === "light" ? styles.light : ""}`}>
       <p className={styles.title}>Support</p>
       <div className={styles.actions}>
         {/* Reset window size to default button */}

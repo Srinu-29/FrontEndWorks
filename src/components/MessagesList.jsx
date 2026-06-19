@@ -54,14 +54,21 @@ export function MessagesList({ messages, loading }) {
             key={i}
             className={`${styles.message} ${isUser ? styles.user : styles.bot}`}
           >
-            <span className={styles.avatar}>
-              {isUser ? (
-                <i className="fa-regular fa-circle-user"></i>
-              ) : (
-                <i className="fa-brands fa-twitch"></i>
-              )}
-            </span>
-            <div className={styles.bubble}>{msg.text}</div>
+            {isUser ? (
+              <>
+                <div className={styles.bubble}>{msg.text}</div>
+                <span className={styles.avatar}>
+                  <i className="fa-regular fa-circle-user"></i>
+                </span>
+              </>
+            ) : (
+              <>
+                <span className={styles.avatar}>
+                  <i className="fa-brands fa-twitch"></i>
+                </span>
+                <div className={styles.bubble}>{msg.text}</div>
+              </>
+            )}
           </div>
         );
       })}

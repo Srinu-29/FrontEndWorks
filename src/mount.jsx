@@ -10,7 +10,8 @@ function injectFont() {
   const link = document.createElement("link");
   link.id = "montserrat-font";
   link.rel = "stylesheet";
-  link.href = "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap";
+  link.href =
+    "https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap";
   document.head.appendChild(link);
 }
 

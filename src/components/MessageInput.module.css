@@ -5,15 +5,16 @@
   gap: 8px;
   width: 100%;
   padding: 10px 12px 12px;
-  background: #ffffff;
-  border-top: 1px solid var(--primary-border);
+  background: #1a1a1a;
+  border-top: 1px solid rgba(29, 185, 84, 0.16);
   box-sizing: border-box;
   font-family: "Montserrat", sans-serif;
 }
 
-/* Light theme variant — dark background (#0b1e68) for the input module */
+/* Light theme variant — white background for input module */
 .light {
-  background: #0b1e68;
+  background: #ffffff;
+  border-top-color: #d6f5e3;
 }
 
 /* ── Quick reply chips ── */
@@ -32,10 +33,10 @@
 .chip {
   flex: 0 0 auto;
   padding: 5px 12px;
-  border: 1px solid var(--primary-border);
+  border: 1px solid rgba(29, 185, 84, 0.3);
   border-radius: 999px;
-  background: #f0f4f5;
-  color: var(--primary);
+  background: rgba(29, 185, 84, 0.1);
+  color: #1db954;
   cursor: pointer;
   font-size: 12px;
   font-weight: 600;
@@ -46,19 +47,19 @@
     transform 0.18s;
 }
 .chip:hover {
-  background: var(--primary-bg);
+  background: rgba(29, 185, 84, 0.2);
   transform: translateY(-1px);
 }
 
-/* In light theme, chips get a lighter background for contrast on dark */
+/* In light theme, chips use green accent colors */
 .light .chip {
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.3);
+  background: #e8f5e9;
+  color: #0f9d58;
+  border-color: #c8e6c9;
 }
 
 .light .chip:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: #c8e6c9;
 }
 
 /* ── Bottom row: capsule + send button side by side ── */
@@ -77,9 +78,9 @@
   display: flex;
   align-items: center;
   padding: 4px 8px 4px 14px;
-  border: 1.5px solid var(--primary-border);
+  border: 1.5px solid rgba(29, 185, 84, 0.2);
   border-radius: 999px;
-  background: #dfe1e4;
+  background: #2a2a2a;
   box-sizing: border-box;
   transition:
     border-color 0.2s,
@@ -87,21 +88,21 @@
     background-color 0.2s;
 }
 .inputCapsule:focus-within {
-  border-color: var(--primary);
-  background: #dfe1e4;
-  box-shadow: 0 0 0 3px var(--primary-overlay);
+  border-color: #1db954;
+  background: #2a2a2a;
+  box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.15);
 }
 
-/* In light theme, input capsule gets a lighter background */
+/* In light theme, input capsule has white background and green tint border */
 .light .inputCapsule {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: #ffffff;
+  border-color: #d6f5e3;
 }
 
 .light .inputCapsule:focus-within {
-  border-color: #ffffff;
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.15);
+  border-color: #0f9d58;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(15, 157, 88, 0.15);
 }
 
 .input {
@@ -112,19 +113,19 @@
   outline: none;
   background: transparent;
   font-size: 14px;
-  color: #1f2937;
+  color: #e5e5e5;
   font-family: inherit;
 }
 .input::placeholder {
-  color: #9ca3af;
+  color: #888888;
 }
 
-/* In light theme, input text and placeholder are white for contrast */
+/* In light theme, input text is black */
 .light .input {
-  color: #ffffff;
+  color: #111111;
 }
 .light .input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+  color: #9ca3af;
 }
 
 .emojiBtn {
@@ -143,18 +144,19 @@
   transition:
     background-color 0.18s,
     transform 0.18s;
+  color: #1db954;
 }
 .emojiBtn:hover {
-  background-color: var(--primary-bg);
+  background-color: rgba(29, 185, 84, 0.15);
   transform: scale(1.1);
 }
 
-/* In light theme, emoji button gets lighter hover */
+/* In light theme, emoji button uses deep green accent */
 .light .emojiBtn {
-  color: #ffffff;
+  color: #0f9d58;
 }
 .light .emojiBtn:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(15, 157, 88, 0.1);
 }
 
 /* Send button — standalone, never clipped */
@@ -164,8 +166,8 @@
   padding: 0 20px;
   border: none;
   border-radius: 999px;
-
-  color: purple;
+  background: #1db954;
+  color: #0a0a0a;
   cursor: pointer;
   font-size: 15px;
   font-weight: 700;
@@ -174,17 +176,18 @@
   transition: transform 0.18s linear;
 }
 .sendBtn:hover {
-  background-color: #b2b5b9;
+  background: #17a04a;
   transform: scale(1.1);
 }
 
-/* In light theme, send button gets white text for contrast */
+/* In light theme, send button is deep green with white text */
 .light .sendBtn {
+  background: #0f9d58;
   color: #ffffff;
 }
 
 .light .sendBtn:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background: #0b8a4b;
 }
 
 /* ── Emoji picker dropdown ── */
@@ -195,16 +198,16 @@
   bottom: calc(100% + 6px);
   z-index: 10000;
   overflow: hidden;
-  border: 1px solid var(--primary-border);
+  border: 1px solid rgba(29, 185, 84, 0.2);
   border-radius: 16px;
-  box-shadow: 0 12px 32px rgba(4, 44, 52, 0.18);
-  background: #ffffff;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  background: #1a1a1a;
 }
 
 .emojiPickerFallback {
   padding: 20px 16px;
   text-align: center;
-  color: #6b7280;
+  color: #9ca3af;
   font-size: 13px;
 }
 

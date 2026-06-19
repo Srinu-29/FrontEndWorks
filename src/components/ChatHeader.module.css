@@ -4,8 +4,8 @@
   justify-content: space-between;
   gap: 12px;
   padding: 14px 16px;
-  background: linear-gradient(135deg, #3b5bdb, #2f80ed);
-  color: white;
+  background: black;
+  color: #1db954;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -25,16 +25,24 @@
   color: white;
 }
 
+/* Light theme variant — black background with white text */
+.light {
+  background: black;
+}
+.light .title {
+  color: #ffffff;
+}
+
 /* Reset window size to default button */
 .resetSizeBtn {
   width: 30px;
   height: 30px;
   flex: 0 0 auto;
   padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  border: 1px solid rgba(29, 185, 84, 0.3);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.16);
-  color: white;
+  background: rgba(29, 185, 84, 0.1);
+  color: #1db954;
   cursor: pointer;
   font-size: 12px;
   display: flex;
@@ -48,6 +56,17 @@
 
 .resetSizeBtn:hover {
   transform: scale(1.1);
+  background: rgba(29, 185, 84, 0.2);
+  border-color: rgba(29, 185, 84, 0.5);
+}
+
+/* In light theme, buttons use white-on-dark style */
+.light .resetSizeBtn {
+  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.16);
+  color: white;
+}
+.light .resetSizeBtn:hover {
   background: rgba(255, 255, 255, 0.26);
   border-color: rgba(255, 255, 255, 0.38);
 }
@@ -57,10 +76,10 @@
   height: 30px;
   flex: 0 0 auto;
   padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  border: 1px solid rgba(29, 185, 84, 0.3);
   border-radius: 25px;
-  background: rgba(255, 255, 255, 0.16);
-  color: white;
+  background: rgba(29, 185, 84, 0.1);
+  color: #1db954;
   cursor: pointer;
   font-size: 14px;
   transition:
@@ -71,6 +90,16 @@
 
 .clearBtn:hover {
   transform: scale(1.1);
+  background: rgba(29, 185, 84, 0.2);
+  border-color: rgba(29, 185, 84, 0.5);
+}
+
+.light .clearBtn {
+  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.16);
+  color: white;
+}
+.light .clearBtn:hover {
   background: rgba(255, 255, 255, 0.26);
   border-color: rgba(255, 255, 255, 0.38);
 }
@@ -81,10 +110,10 @@
   height: 30px;
   flex: 0 0 auto;
   padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.24);
+  border: 1px solid rgba(29, 185, 84, 0.3);
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.16);
-  color: white;
+  background: rgba(29, 185, 84, 0.1);
+  color: #1db954;
   cursor: pointer;
   font-size: 14px;
   display: flex;
@@ -98,6 +127,16 @@
 
 .themeToggle:hover {
   transform: scale(1.1);
+  background: rgba(29, 185, 84, 0.2);
+  border-color: rgba(29, 185, 84, 0.5);
+}
+
+.light .themeToggle {
+  border-color: rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.16);
+  color: white;
+}
+.light .themeToggle:hover {
   background: rgba(255, 255, 255, 0.26);
   border-color: rgba(255, 255, 255, 0.38);
 }

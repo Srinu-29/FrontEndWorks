@@ -33,7 +33,6 @@ export function MessageInput({ onKeyDown, onSend }) {
 
   const handleEmojiClick = (emojiData) => {
     dispatch(setInput(input + emojiData.emoji));
-    dispatch(setShowEmojiPicker(false));
     inputRef.current?.focus();
   };
 
@@ -98,7 +97,15 @@ export function MessageInput({ onKeyDown, onSend }) {
 
       {/* Emoji Picker */}
       {showEmojiPicker && (
-        <div className={styles.emojiPickerContainer}>
+        <div
+          className={styles.emojiPickerContainer}
+          onKeyDown={(e) => {
+            if (e.key === "Enter") {
+              e.preventDefault();
+              dispatch(setShowEmojiPicker(false));
+            }
+          }}
+        >
           <Suspense
             fallback={
               <div className={styles.emojiPickerFallback}>Loading emojis…</div>

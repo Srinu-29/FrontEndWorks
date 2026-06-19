@@ -7,6 +7,7 @@ import {
   selectMessages,
   toggleChat,
   clearHistory,
+  setShowEmojiPicker,
 } from "./store/chatSlice";
 import { useChatApi } from "./hooks/useChatApi";
 import { useChatPersistence } from "./hooks/useChatPersistence";
@@ -22,12 +23,14 @@ function App() {
 
   function handleSend(customText) {
     sendMessage(typeof customText === "string" ? customText : undefined);
+    dispatch(setShowEmojiPicker(false));
   }
 
   function handleKeyDown(e) {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       sendMessage();
+      dispatch(setShowEmojiPicker(false));
     }
   }
 

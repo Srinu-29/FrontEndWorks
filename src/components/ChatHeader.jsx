@@ -7,7 +7,7 @@ export function ChatHeader({ onClear, onResetSize }) {
 
   return (
     <div className={styles.header}>
-      <p className={styles.title}>Chatbot</p>
+      <p className={styles.title}>Support</p>
       <div className={styles.actions}>
         {/* Reset window size to default button */}
         <button
@@ -27,7 +27,9 @@ export function ChatHeader({ onClear, onResetSize }) {
           onClick={toggleTheme}
           aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
         >
-          <i className={`fa-solid ${theme === "dark" ? "fa-sun" : "fa-moon"}`}></i>
+          <i
+            className={`fa-solid ${theme === "dark" ? "fa-sun" : "fa-moon"}`}
+          ></i>
         </button>
       </div>
     </div>

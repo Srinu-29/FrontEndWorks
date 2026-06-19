@@ -112,6 +112,7 @@ export function MessageInput({ onKeyDown, onSend }) {
               autoFocusSearch={false}
               searchPlaceholder="Search emojis…"
               skinTonesDisabled
+              theme={theme === "light" ? "light" : "dark"}
             />
           </Suspense>
         </div>

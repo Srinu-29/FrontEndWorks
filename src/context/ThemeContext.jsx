@@ -5,7 +5,7 @@ const ThemeContext = createContext();
 
 // Theme provider component that wraps the app and provides theme state
 export function ThemeProvider({ children }) {
-  //urrent them State to track ce: "dark" (current/default) or "light" (white)
+  // Current theme state to track the current/default "dark" or "light" (white)
   const [theme, setTheme] = useState("dark");
 
   // Toggle between dark and light themes
